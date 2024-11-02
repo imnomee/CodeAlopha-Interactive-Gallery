@@ -57,5 +57,6 @@ For inquiries, please reach out to:
 
 -   **Noman Rafiq**: [heyimnomee@gmail.comm](mailto:heyimnomee@gmail.com)
 -   **GitHub**: [ImNomee](https://github.com/imnomee)
+-   **LinkedIn**: [ImNomee](https://www.linkedin.com/in/heyimnomee/)
 
 Thank you for checking out the CodeAlpha Interactive Gallery project! Feel free to contribute and make it better!
