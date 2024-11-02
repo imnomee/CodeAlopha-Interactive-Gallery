@@ -1,0 +1,238 @@
+/* General Reset */
+/* Sets box-sizing to border-box on all elements, so padding and border are included in element's total width and height */
+* {
+    box-sizing: border-box;
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+/* Basic Body Styling */
+/* Sets a clean sans-serif font for the whole document */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header Section Styles */
+/* Centers header content and adds some vertical spacing */
+header {
+    text-align: center;
+    margin: 20px 0;
+    color: #333; /* Dark gray color for text */
+}
+
+/* Header Title Styling */
+/* Adjusts size and spacing of the main heading */
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+/* Header Paragraph Styling */
+/* Styles subtitle with a lighter gray, limits width for better readability, and adds line spacing */
+header p {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+header p:last-child {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+/* Gallery Grid */
+/* Styles the main gallery container for a responsive and centered grid layout */
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allows items to wrap into new rows */
+    justify-content: center; /* Centers items in the container */
+    align-items: center; /* Vertically centers items */
+    margin: 20px auto;
+    padding: 20px 10px;
+    max-width: 1200px; /* Limits width for better responsiveness */
+    /* gap: 40px; Adds space between items */
+}
+
+/* Gallery Item Styling */
+/* Defines appearance and hover effects for each gallery image */
+.gallery-item img {
+    width: 100%; /* Sets image to occupy full width of container */
+    max-width: 350px; /* Sets max width for larger screens */
+    height: 300px; /* Fixed height for consistent layout */
+    object-fit: cover; /* Crops image to fit container without stretching */
+    border-radius: 8px; /* Rounds the corners slightly */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: transform 0.3s; /* Adds smooth scaling on hover */
+    border: 2px solid #999; /* Adds a subtle border around images */
+    margin: 5px;
+}
+
+/* Gallery Item Hover Effect */
+/* Slightly enlarges the image when hovered for a zoom effect */
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+/* Defines the full-screen overlay for displaying images in larger view */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1000; /* Ensures modal is above other elements */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
+    justify-content: center; /* Centers modal content */
+    align-items: center;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Modal Image Styles */
+/* Styles the main image in the modal for a larger display */
+.modal-content {
+    min-width: 50vw; /* Sets a minimum width to take up screen space */
+    height: auto; /* Maintains aspect ratio */
+    /* object-fit: contain; Centers image while preserving aspect ratio */
+    /* margin: auto; Centers image within the modal */
+    /* display: block; Ensures image takes up designated space */
+    border-radius: 20px; /*Optional rounding for a softer look */
+}
+
+/* Close Button */
+/* Styles the close button with position, color, and size */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white; /* White color for visibility */
+    font-size: 30px; /* Larger size for easy clickability */
+    cursor: pointer; /* Pointer cursor for interaction */
+}
+
+/* Caption Styling */
+/* Centers and styles caption text below modal image */
+.caption {
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Navigation Button Styles */
+/* Styles for Previous and Next Buttons in the modal */
+.prev,
+.next {
+    width: 40px; /* Sets button width */
+    height: 40px; /* Sets button height to make it square */
+    background-color: rgba(0, 0, 0, 0.6); /* Adds semi-transparent background */
+    color: #fff; /* Sets arrow color to white */
+    border: none; /* Removes default border */
+    border-radius: 50%; /* Makes buttons round */
+    display: flex; /* Centers icon within button */
+    align-items: center; /* Centers icon vertically */
+    justify-content: center; /* Centers icon horizontally */
+    cursor: pointer; /* Pointer cursor for interaction */
+    font-size: 1.5em; /* Enlarges arrow icon */
+    position: absolute; /* Positions buttons in modal */
+    top: 50%; /* Centers buttons vertically */
+    transform: translateY(-50%); /* Corrects vertical alignment */
+    z-index: 10; /* Places above modal image */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Position Previous Button */
+/* Positions previous button on left side of modal */
+.prev {
+    left: 20px;
+}
+
+/* Position Next Button */
+/* Positions next button on right side of modal */
+.next {
+    right: 20px;
+}
+
+/* Button Hover Effect */
+/* Darkens button background on hover for visual feedback */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Adjustments for Modal Navigation Buttons */
+/* Sets specific left and right positioning for better centering */
+.modal .prev {
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.modal .next {
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+/* Hover Effect for Modal Buttons */
+/* Applies same hover effect for modal-specific buttons */
+.modal .prev:hover,
+.modal .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Full-Screen Button Styling */
+/* Styles the fullscreen button with color, position, and size */
+.fullscreen {
+    position: absolute;
+    bottom: 20px; /* Positions button at bottom right */
+    right: 30px;
+    color: white;
+    font-size: 2em; /* Increases size for visibility */
+    background: transparent; /* Transparent background for subtle look */
+    border: none; /* Removes border */
+    cursor: pointer; /* Adds pointer cursor */
+}
+
+/* Full-Screen Button Hover Effect */
+/* Lightens color on hover for feedback */
+.fullscreen:hover {
+    color: #ddd;
+}
+
+/* Footer Section Styles */
+/* Adds a simple footer at the bottom of the page */
+footer {
+    text-align: center; /* Centers content within the footer */
+    padding: 20px; /* Adds padding for spacing */
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text for contrast */
+    font-size: 1em; /* Slightly smaller font size */
+    margin-top: 40px; /* Adds space above footer to separate from main content */
+}
+
+footer p {
+    margin: 5px 0; /* Adds minimal margin for spacing between paragraphs */
+    line-height: 1.5; /* Increases readability with line spacing */
+}
+
+footer a {
+    color: #ddd; /* Light gray link color for visibility */
+    text-decoration: none; /* Removes default underline */
+    transition: color 0.3s; /* Smooth transition on hover */
+}
+
+footer a:hover {
+    color: #fff; /* Changes color to white on hover for emphasis */
+}
+
+.detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.detail p:last-child {
+    margin-left: 10px;
+}
